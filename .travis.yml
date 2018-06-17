@@ -1,0 +1,15 @@
+dist: trusty
+
+git:
+  depth: 500
+
+language: node_js
+
+node_js:
+  - "6"
+
+before_install:
+  - curl -sSL https://raw.githubusercontent.com/cljs-oss/canary/master/scripts/install-canary.sh | bash
+
+script:
+  - lein cljsbuild once

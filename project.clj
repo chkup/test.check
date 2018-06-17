@@ -8,7 +8,7 @@
   :test-paths ["src/test/clojure"]
   :jvm-opts ^:replace ["-Xmx512m" "-server"]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.10.1"]
-                                  [org.clojure/clojurescript "1.10.520"]]}
+                                  [org.clojure/clojurescript ~(or (System/getenv "CANARY_CLOJURESCRIPT_VERSION") "1.10.520")]]}
              :self-host {:dependencies [[org.clojure/clojure "1.10.1"]
                                         [org.clojure/clojurescript "1.10.520"]]
                          :main clojure.main
